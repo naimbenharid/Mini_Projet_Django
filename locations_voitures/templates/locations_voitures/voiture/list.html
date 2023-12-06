@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Ajoutez ces lignes dans la section <head> de votre fichier HTML -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>{% block title %}{% endblock %}</title>
+<link href="{% static "css/list.css" %}" rel="stylesheet">
+</head>
+{% block content %}
+  <h1>Liste des Voitures</h1>
+
+  <div class="row">
+    {% for voiture in voitures %}
+      {% if forloop.counter0|divisibleby:4 %}
+        </div><div class="row">
+      {% endif %}
+      <div class="col-md-3">
+        <div class="card">
+          <h3>{{ voiture.marque }} {{ voiture.modele }}</h3>
+
+         {% for image in voiture.imagesVoiture.all %}
+        <img src="{{ image.image.url }}" alt="Image de la voiture">
+   {% endfor %}
+
+          <p>Immatriculation : {{ voiture.immatriculation }}</p>
+          <p>Année de fabrication : {{ voiture.annee_fabrication|date:"Y" }}</p>
+          <p>Couleur : {{ voiture.couleur }}</p>
+           <p>Status : 
+            {% if voiture.status == 'Dis' %}
+            <button class="btn btn-success" {% if voiture.status == 'InDis' %}disabled{% endif %}>Disponible</button>
+          {% else %}
+            <button class="btn btn-danger" disabled>Indisponible</button>
+          {% endif %}
+          
+          <!-- Utilisation d'une classe conditionnelle pour le bouton "Détails" -->
+          <button class="btn btn-primary" {% if voiture.status == 'Dis' %}disabled{% endif %}> <a href="{% url 'voiture_detail' voiture.id %}" class="btn btn-primary" {% if voiture.status == 'InDis' %}{% endif %}>Réserver</a></button>
+       <!-- Ajoutez d'autres détails de la voiture ici -->
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+</html>

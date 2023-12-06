@@ -1,0 +1,58 @@
+
+    body {
+      background: linear-gradient(to bottom, #f0f0f0, #95a5a6);
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 50px auto;
+      background: linear-gradient(to bottom, rgb(108, 178, 208), #95a5a6); /* Dégradation de vert à gris clair */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(129, 119, 119, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(0, 132, 255); /* Couleur du texte pour le titre */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff; /* Couleur du texte pour les labels */
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.2); /* Input transparent */
+    }
+
+    button {
+      background: transparent;
+      color: #91d6a8; /* Couleur du texte pour le bouton */
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      border: 2px solid rgb(0, 204, 255); /* Bordure verte */
+      border-radius: 4px;
+      padding: 10px;
+      width: 100%;
+      font-size:20px;
+    }
+
+    button:hover {
+      background: rgba(46, 146, 204, 0.1); /* Légère couleur de fond au survol */
+      color: #fff; /* Changement de couleur du texte au survol */
+      border-color: #fff; /* Changement de couleur de la bordure au survol */
+    }
+
+
+  

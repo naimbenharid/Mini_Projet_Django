@@ -1,0 +1,19 @@
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<h1>Log-in</h1>
+<div class="login-form">
+  <form action="{% url 'accounts:login' %}" method="post">
+    {% csrf_token %}
+    {{ form.username.label_tag }}
+    {{ form.username }}
+    {{ form.password.label_tag }}
+    {{ form.password }}
+    <p><input type="submit" value="Log-in"></p>
+  </form>
+</div>
+{% endblock %}
+
