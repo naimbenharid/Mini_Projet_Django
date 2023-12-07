@@ -1,0 +1,27 @@
+<!-- locations_voitures/templates/locations_voitures/reservation_confirmed.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mes Réservations{% endblock %}</title>
+<link href="{% static "css/confirm.css" %}" rel="stylesheet">
+
+</head>
+
+
+<body>
+<body>
+
+    <h1>Reservation Confirmed</h1>
+
+    <p>Your reservation has been confirmed. Thank you for choosing our service!</p>
+
+    <!-- Add any additional content or information as needed -->
+  
+  <a href="{{ user_reservations_url }}">Voir mes réservations</a>
+
+</body>
+</html>

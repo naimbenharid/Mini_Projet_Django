@@ -1,0 +1,61 @@
+/* locations_voitures/static/css/reserver_voiture.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #c4dbed, #52a4de); /* Dégradé de bleu à gris clair */
+    color: #333; /* Couleur du texte */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 80px;
+    text-align: center;
+    color: #0066cc; /* Bleu */
+}
+
+form {
+    margin-top: 80px;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #66c2d6; /* Fond blanc */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+form input {
+    border-color: aqua;
+    background-color: transparent; /* Rend le fond transparent */
+}
+
+
+form input[type="submit"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #66c2d6; /* Bleu */
+    color: #fff; /* Couleur du texte */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left:90px ;
+}
+
+form input[type="submit"]:hover {
+    background-color: #3cd6b2;
+     /* Légère variation de couleur au survol */
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #172668; /* Bleu */
+    transition: color 0.3s ease; /* Ajoute une transition sur la couleur pendant 0.3 secondes avec une fonction d'aise */
+}
+
+a:hover {
+    color: #4c98ea; /* Change la couleur lorsqu'on survole le lien */
+}
+

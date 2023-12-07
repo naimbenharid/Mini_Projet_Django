@@ -1,0 +1,35 @@
+<!-- voiture_detail.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Ajoutez ces lignes dans la section <head> de votre fichier HTML -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>{% block title %}{% endblock %}</title>
+<link href="{% static "css/detail.css" %}" rel="stylesheet">
+</head>
+<body>
+
+<div class="card">
+  <h2>Détails de la Voiture</h2>
+
+  <h3>{{ voiture }}</h3>
+  <p>Immatriculation: {{ voiture.immatriculation }}</p>
+  <p>Marque: {{ voiture.marque }}</p>
+  <p>Modèle: {{ voiture.modele }}</p>
+  <p>Année de fabrication: {{ voiture.annee_fabrication }}</p>
+  <p>Couleur: {{ voiture.couleur }}</p>
+  <p>Status: {{ voiture.get_status_display }}</p>
+   <p>Prix du jour: {{ voiture.prix_jour}}</p>
+
+  {% for image in voiture.imagesVoiture.all %}
+        <img src="{{ image.image.url }}" alt="Image de la voiture">
+   {% endfor %}
+ 
+
+  <a href="{% url 'locations_voitures:reserver_voiture' voiture.id %}" class="btn btn-success">Louer</a>
+  <a href="{% url 'locations_voitures:voiture_list'  %}">Back</a>
+</div>
+
+</body>
+</html>

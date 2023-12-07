@@ -5,7 +5,7 @@
 <!-- Ajoutez ces lignes dans la section <head> de votre fichier HTML -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <title>{% block title %}{% endblock %}</title>
-<link href="{% static "css/list.css" %}" rel="stylesheet">
+<link href="{% static "css/location.css" %}" rel="stylesheet">
 </head>
 {% block content %}
   <h1>Liste des Voitures</h1>
@@ -34,7 +34,7 @@
           {% endif %}
           
           <!-- Utilisation d'une classe conditionnelle pour le bouton "Détails" -->
-          <button class="btn btn-primary" {% if voiture.status == 'Dis' %}disabled{% endif %}> <a href="{% url 'voiture_detail' voiture.id %}" class="btn btn-primary" {% if voiture.status == 'InDis' %}{% endif %}>Réserver</a></button>
+          <button class="btn btn-primary" {% if voiture.status == 'Dis' %}disabled{% endif %}> <a href="{% url 'locations_voitures:voiture_detail' voiture.id %}" class="btn btn-primary" {% if voiture.status == 'InDis' %}{% endif %}>Détail</a></button>
        <!-- Ajoutez d'autres détails de la voiture ici -->
         </div>
       </div>

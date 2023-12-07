@@ -153,3 +153,6 @@ LOGGING={
         }
     }
 }
+STATIC_ROOT = BASE_DIR / 'static'
+MEDIA_ROOT = STATIC_ROOT / 'media'
+MEDIA_URL = '/media/'

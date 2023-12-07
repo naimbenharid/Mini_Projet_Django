@@ -1,0 +1,103 @@
+/* Ajoutez ces styles dans votre fichier list.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Couleur de fond */
+}
+
+h1 {
+  text-align: center;
+  color: #007bff; /* Couleur du texte */
+}
+
+.card {
+  background: linear-gradient(to right, #bbc7d5, #4e93d7);
+  margin: 15px;
+  padding: 15px;
+  margin-left: 70px;
+  width: 450px;
+  height: 620px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Couleur de fond des cartes */
+}
+
+.card h3 {
+  color: #1469be;
+  font-weight: bold;
+  text-align: center; /* Couleur du titre de la carte */
+}
+
+.card p {
+  color: #0a81ea;
+  font-weight: bold; /* Ajout du point-virgule manquant */
+  /* Couleur du texte des paragraphes */
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* detail.css */
+
+.a {
+  background: linear-gradient(to right, #007bff, #acb5be);
+  color: #fff;
+  margin-left: 50px;
+  width: 50px;
+  height: 10px;
+}
+
+.a:hover {
+  /* Changez le style du bouton lorsqu'il est survolé */
+  background: linear-gradient(to right, #b0c2d9, #007bff);
+  color: #fff;
+}
+
+.btn-success {
+  /* Dégradé linéaire du bleu au gris */
+  background: linear-gradient(to right, #00ffb3, #b0c2d9);
+  /* Bordure bleue */
+  border: 1px solid #00ff80;
+  /* Couleur du texte blanche */
+  color: #fff;
+  /* Ajoutez d'autres styles si nécessaire */
+  /* Ajout de l'animation */
+  animation: moveBackAndForth 2s infinite;
+}
+
+/* Animation de va-et-vient */
+@keyframes moveBackAndForth {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(20px); /* Ajustez la distance souhaitée */
+  }
+}
+
+.btn-success:hover {
+  /* Changez le style du bouton lorsqu'il est survolé */
+  background: linear-gradient(to right, #b0c2d9, #00ffb3);
+  color: #fff;
+  /* Supprimez l'animation lorsqu'il est survolé */
+  animation: none;
+}
+
+/* Style pour la classe conditionnelle "disabled" */
+.btn-success:disabled, .btn-danger:disabled, .btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.row {
+  margin: 0 -15px;
+}
+
+.col-md-3 {
+  padding: 0 15px;
+}
+
+/* Ajoutez d'autres styles au besoin */

@@ -1,0 +1,36 @@
+/* locations_voitures/static/css/user_reservations.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #b3cde0, #f0f0f0); /* Dégradé de bleu à gris clair */
+    color: #333; /* Couleur du texte */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 90px;
+    text-align: center;
+    color: #0066cc; /* Bleu */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: linear-gradient(to right, #3776a4, #f0f0f0); /* Dégradé de bleu à gris clair */
+    width: 700px ;
+    margin-left: 400px;
+    margin-top: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+p {
+    text-align: center;
+    color: #333; /* Couleur du texte */
+}
+

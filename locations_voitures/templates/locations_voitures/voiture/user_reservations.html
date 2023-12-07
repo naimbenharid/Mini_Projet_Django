@@ -1,0 +1,27 @@
+<!-- locations_voitures/voiture/user_reservations.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- Ajoutez ces lignes dans la section <head> de votre fichier HTML -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>{% block title %}Mes Réservations{% endblock %}</title>
+<link href="{% static "css/userlist.css" %}" rel="stylesheet">
+</head>
+<body>
+
+  <h1>My Reservations</h1>
+
+  {% if reservations %}
+    <ul>
+      {% for reservation in reservations %}
+        <li>{{ reservation.voiture }} - {{ reservation.date_debut }} à {{ reservation.date_fin }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Vous n'avez aucune réservation pour le moment.</p>
+  {% endif %}
+
+</body>
+</html>

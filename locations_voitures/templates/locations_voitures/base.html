@@ -1,7 +1,7 @@
 
 {% load static %}
 <!DOCTYPE html>
-<html>
+<!--<html>
 <head>
 <title>{% block title %}{% endblock %}</title>
 <link href="{% static "css/location.css" %}" rel="stylesheet">
@@ -22,5 +22,39 @@
 </div>
 {% endif %}
 </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Votre Titre par Défaut{% endblock %}</title>
+</head>
+<body>
+
+    <header>
+        <h1>Titre de l'En-tête</h1>
+        <!-- Ajoutez d'autres éléments d'en-tête si nécessaire -->
+    </header>
+
+    <nav>
+        <!-- Ajoutez la navigation ici, par exemple, un menu -->
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/location/">Locations</a></li>
+            <!-- Ajoutez d'autres liens de navigation selon vos besoins -->
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Ajoutez le pied de page ici -->
+        <p>&copy; 2023 Votre Entreprise</p>
+    </footer>
+
 </body>
 </html>

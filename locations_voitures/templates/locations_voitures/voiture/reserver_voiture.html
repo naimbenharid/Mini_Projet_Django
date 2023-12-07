@@ -1,0 +1,17 @@
+<!-- Dans locations_voitures/templates/locations_voitures/reserver_voiture.html -->
+{% load static %}
+<head>
+<!-- Ajoutez ces lignes dans la section <head> de votre fichier HTML -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>{% block title %}Mes Réservations{% endblock %}</title>
+<link href="{% static "css/reserver.css" %}" rel="stylesheet">
+</head>
+{% block content %}
+  <h1>Réserver la voiture {{ voiture }}</h1>
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Réserver">
+  </form>
+  <a href="{% url 'locations_voitures:voiture_detail' pk=voiture.id %}">Retour aux détails de la voiture</a>
+{% endblock %}
