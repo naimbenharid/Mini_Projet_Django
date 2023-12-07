@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #c6e1fc, #dbcca0); /* Dégradation du gris à l'orangé clair */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Ajoutez ceci à votre fichier CSS */
+
+.container {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff; /* Fond blanc du conteneur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    text-align: center; /* Centre le contenu horizontalement */
+    margin: auto; /* Centre le conteneur verticalement */
+}
+
+h1 {
+    color: #007bff; 
+   margin-right: 50px;
+}
+
+
+form {
+    margin-top: 20px;
+}
+
+/* Style des champs de formulaire */
+input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da; /* Bordure */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+    border-color: #88a8ca; /* Bordure bleue au focus */
+}
+
+/* Style des boutons */
+button {
+    color: #fff; /* Couleur du texte du bouton */
+    background-color: #61e7bd; /* Couleur de fond du bouton */
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}
+
+a.btn {
+    color: #fff; /* Couleur du texte du lien bouton */
+    text-decoration: none;
+}
+.btn-primary{
+    background-color: rgb(255, 179, 0);
+}
+a.btn-secondary {
+    background-color: #61a9e7; /* Couleur de fond du lien bouton */
+    color: #fff; /* Couleur du texte du lien bouton */
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 320px;
+}
+
+a.btn-secondary:hover {
+    background-color: #5a6268; /* Couleur de fond du lien bouton au survol */
+}

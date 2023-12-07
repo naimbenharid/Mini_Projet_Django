@@ -1,0 +1,22 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Ajoutez ces lignes dans la section <head> de votre fichier HTML -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{% static "css/update.css" %}" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+{% block content %}
+  <h1>Update Reservation</h1>
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Update Reservation</button>
+  </form>
+  <br>
+  <a href="{% url 'locations_voitures:user_reservations' %}" class="btn btn-secondary">Back</a>
+{% endblock %}

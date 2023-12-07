@@ -1,12 +1,12 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView , UpdateView ,DeleteView
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http import HttpResponseRedirect
 from locations_voitures.forms import ReservationForm
 from locations_voitures.models import Voiture, Location
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.contrib import messages
-
+from .forms import LocationUpdateForm
 # Create your views here.
 
 class VoitureListView(ListView):
@@ -18,6 +18,27 @@ class VoitureDetailView(DetailView):
     model = Voiture
     template_name = 'locations_voitures/voiture/detail.html'
     context_object_name = 'voiture'
+class UpdateReservationView(UpdateView):
+    model = Location
+    template_name = 'locations_voitures/voiture/update_reservation.html'
+    form_class = LocationUpdateForm
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset=queryset)
+        return obj
+
+    def get_success_url(self):
+        return reverse_lazy('locations_voitures:update_reservation', kwargs={'pk': self.object.pk})
+
+
+class DeleteReservationView(DeleteView):
+    model = Location
+    template_name = 'locations_voitures/voiture/delete_reservation.html'  
+
+    def get_success_url(self):
+        return reverse_lazy('locations_voitures:user_reservations')  # Redirigez vers la page des réservations après la suppression
+
+
 
 @login_required
 def reserver_voiture(request, voiture_id):

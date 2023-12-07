@@ -1,5 +1,6 @@
 from django import forms
 from .models import Location
+from django.contrib import messages
 
 class ReservationForm(forms.ModelForm):
     class Meta:
@@ -20,3 +21,16 @@ class ReservationForm(forms.ModelForm):
             raise forms.ValidationError("La date de début doit être antérieure à la date de fin")
 
         return cleaned_data
+
+
+
+
+class LocationUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Location
+        fields = ['voiture', 'date_debut', 'date_fin']
+
+        def form_valid(self, form):
+            response = super().form_valid(form)
+            messages.success(self.request, 'Votre réservation a été mise à jour avec succès.')
+            return response

@@ -16,7 +16,10 @@
   {% if reservations %}
     <ul>
       {% for reservation in reservations %}
-        <li>{{ reservation.voiture }} - {{ reservation.date_debut }} à {{ reservation.date_fin }}</li>
+        <li>{{ reservation.voiture }} - {{ reservation.date_debut }} à {{ reservation.date_fin }}
+            <a href="{% url 'locations_voitures:update_reservation' reservation.id %}" class="btn btn-primary">Update</a>
+            <a href="{% url 'locations_voitures:delete_reservation' reservation.id %}" class="btn btn-danger">Delete</a>
+            </li>
       {% endfor %}
     </ul>
   {% else %}

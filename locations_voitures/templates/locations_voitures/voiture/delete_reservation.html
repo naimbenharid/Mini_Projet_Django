@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Ajoutez ces lignes dans la section <head> de votre fichier HTML -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="{% static "css/delete.css" %}" rel="stylesheet">
+
+<title>{% block title %}{% endblock %}</title>
+</head>
+
+{% block content %}
+  <h1>Delete Reservation</h1>
+  <p>Are you sure you want to delete this reservation?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete Reservation</button>
+  </form>
+  <br>
+<a id="back" href="{% url 'locations_voitures:user_reservations' %}" class="btn btn-secondary">Cancel</a>
+{% endblock %}
