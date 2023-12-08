@@ -6,10 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 
 
 from accounts.forms import UserRegistrationForm
-# Create your views here.
 def register_view(request):
- #   if request.user.is_authenticated:
-    #    return redirect(reverse('locations_voitures:voiture_list'))
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -25,10 +22,7 @@ def register_view(request):
 )
 
 
-def login_view(request):
-   # if request.user.is_authenticated:
-     #   return redirect(reverse('locations_voitures:voiture_list'))
-    
+def login_view(request):    
     if request.method == "POST":
         form = AuthenticationForm(request=request, data=request.POST)
         if form.is_valid():
@@ -39,7 +33,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 return redirect(reverse('locations_voitures:voiture_list'))
-    else:  # Mettez l'instanciation du formulaire à l'extérieur du bloc else
+    else:  
         form = AuthenticationForm()
 
     return render(

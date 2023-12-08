@@ -36,7 +36,7 @@ class DeleteReservationView(DeleteView):
     template_name = 'locations_voitures/voiture/delete_reservation.html'  
 
     def get_success_url(self):
-        return reverse_lazy('locations_voitures:user_reservations')  # Redirigez vers la page des réservations après la suppression
+        return reverse_lazy('locations_voitures:user_reservations')  
 
 
 
@@ -52,7 +52,6 @@ def reserver_voiture(request, voiture_id):
             location.user = request.user
             location.save()
 
-            # Rediriger vers la liste des réservations de l'utilisateur après la confirmation
             return redirect('locations_voitures:user_reservations')
 
     else:
@@ -67,7 +66,6 @@ def user_reservations(request):
 def reservation_confirmed(request):
     user_reservations_url = reverse('locations_voitures:user_reservations')
 
-    # Ajouter un message de débogage
     messages.success(request, f"Redirection vers {user_reservations_url}")
 
     return render(request, 'locations_voitures/voiture/reservation_confirmed.html', {'user_reservations_url': user_reservations_url})

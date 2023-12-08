@@ -9,14 +9,12 @@ class ReservationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Ajoutez d'autres personnalisations au besoin
 
     def clean(self):
         cleaned_data = super().clean()
         date_debut = cleaned_data.get("date_debut")
         date_fin = cleaned_data.get("date_fin")
 
-        # Vérifier si la date de début est antérieure à la date de fin
         if date_debut and date_fin and date_debut >= date_fin:
             raise forms.ValidationError("La date de début doit être antérieure à la date de fin")
 
